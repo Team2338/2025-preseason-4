@@ -13,6 +13,7 @@ package team.gif.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
+    public static final double MOTORSPEED = 0.2;
 
 
 }
