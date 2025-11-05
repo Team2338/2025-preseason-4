@@ -1,11 +1,11 @@
-CommandTemplatepackage team.gif.robot.commands;
+package team.gif.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
+
 
 public class FootballShooter extends Command {
 
     public FootballShooter() {
-        super();
         //addRequirements(Robot.climber); // uncomment
     }
 
