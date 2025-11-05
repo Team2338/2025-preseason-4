@@ -5,6 +5,8 @@ import com.ctre.phoenix.motorcontrol.TalonSRXControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import team.gif.robot.Constants;
+import team.gif.robot.Robot;
 import team.gif.robot.RobotMap;
 public class Shooter extends SubsystemBase {
 
@@ -24,5 +26,6 @@ public class Shooter extends SubsystemBase {
         motortop.set(TalonSRXControlMode.PercentOutput, percentOutputTop);
         motorbottom.set(TalonSRXControlMode.PercentOutput, percentOutputBot);
     }
-
 }
+
+
