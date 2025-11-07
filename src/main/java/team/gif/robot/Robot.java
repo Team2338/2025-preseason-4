@@ -22,6 +22,7 @@ public class Robot extends TimedRobot {
   private static Command autonomousCommand;
   private RobotContainer robotContainer;
   public static OI oi;
+  private Command getAutonomousCommand;
 
   public static Collector collector;
 
@@ -45,7 +46,6 @@ public class Robot extends TimedRobot {
     oi = new OI();
     ui = new UI();
     collector = new Collector();
-
   }
 
   /**
@@ -76,7 +76,9 @@ public class Robot extends TimedRobot {
 
   /** This autonomous runs the autonomous command selected by your {@link RobotContainer} class. */
   @Override
-  public void autonomousInit() {}
+  public void autonomousInit() {
+    robotContainer.getAutonomousCommand();
+  }
 
   /** This function is called periodically during autonomous. */
   @Override
