@@ -43,7 +43,7 @@ public class Robot extends TimedRobot {
     robotContainer = new RobotContainer();
 
     shooterLimelight = new Limelight("Limelight-shooter");
-    //shooterLimelight.setDistanceEstimatorParams();
+    shooterLimelight.setDistanceEstimatorParams(90,14.5,15.75, 0);
 
     //These should be at or near the bottom
     oi = new OI();
