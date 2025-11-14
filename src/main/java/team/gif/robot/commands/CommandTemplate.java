@@ -2,7 +2,7 @@ package team.gif.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
 
-public class CommandTemplateCommandTemplate extends Command {
+public class CommandTemplate extends Command {
 
     public CommandTemplate() {
         super();

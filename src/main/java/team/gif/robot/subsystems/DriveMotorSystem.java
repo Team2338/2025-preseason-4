@@ -25,7 +25,7 @@ import team.gif.robot.Robot;
 import team.gif.robot.RobotMap;
 
 import static team.gif.robot.Constants.*;
-import static team.gif.robot.RobotMap.SPARK_MAX_ID;
+
 
 public class DriveMotorSystem extends SubsystemBase {
     /** Creates a new ExampleSubsystem. */
@@ -42,12 +42,12 @@ public class DriveMotorSystem extends SubsystemBase {
         config.inverted(true);
         config.idleMode(SparkBaseConfig.IdleMode.kBrake);
 
-        sparkleft = new SparkMax(SPARK_MAX_ID, SparkLowLevel.MotorType.kBrushless);
+        sparkleft = new SparkMax(RobotMap.SPARK_MAX_LEFT_ID, SparkLowLevel.MotorType.kBrushless);
         sparkEncoderleft = sparkleft.getEncoder();
         sparkleft.configure(config, SparkBase.ResetMode.kResetSafeParameters, SparkBase.PersistMode.kPersistParameters);
 
 
-        sparkright = new SparkMax(SPARK_MAX_ID, SparkLowLevel.MotorType.kBrushless);
+        sparkright = new SparkMax(RobotMap.SPARK_MAX_RIGHT_ID, SparkLowLevel.MotorType.kBrushless);
         sparkEncoderright = sparkright.getEncoder();
         sparkright.configure(config, SparkBase.ResetMode.kResetSafeParameters, SparkBase.PersistMode.kPersistParameters);
 
