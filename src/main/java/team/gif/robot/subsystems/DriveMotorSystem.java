@@ -34,7 +34,7 @@ public class DriveMotorSystem extends SubsystemBase {
     public RelativeEncoder sparkEncoderleft;
     public RelativeEncoder sparkEncoderright;
     public DifferentialDrive drive;
-    public DifferentialDrivePoseEstimator poseEstimator;
+//    public DifferentialDrivePoseEstimator poseEstimator;
     
 
     public DriveMotorSystem() {
@@ -54,24 +54,24 @@ public class DriveMotorSystem extends SubsystemBase {
 
         drive = new DifferentialDrive(sparkleft, sparkright);
 
-        RobotConfig robotConfig;
-        try {
-            robotConfig = RobotConfig.fromGUISettings();
-        } catch (Exception e) {
-            // Handle exception as needed
-            e.printStackTrace();
-        }
-
-        AutoBuilder.configure(
-                this::getPose,
-
-
-        );
+//        RobotConfig robotConfig;
+//        try {
+//            robotConfig = RobotConfig.fromGUISettings();
+//        } catch (Exception e) {
+//            // Handle exception as needed
+//            e.printStackTrace();
+//        }
+//
+//        AutoBuilder.configure(
+//                this::getPose,
+//
+//
+//        );
     }
 
-    public Pose2d getPose(){
-        return poseEstimator.getEstimatedPosition();
-    }
+//    public Pose2d getPose(){
+//        return poseEstimator.getEstimatedPosition();
+//    }
 
 //    public double velocityGetleft(){
 //        return  sparkEncoderleft.getVelocity();
