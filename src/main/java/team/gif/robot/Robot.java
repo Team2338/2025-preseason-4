@@ -3,7 +3,7 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package team.gif.robot;
-
+import team.gif.robot.subsystems.DriveMotorSystem;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
@@ -26,7 +26,9 @@ public class Robot extends TimedRobot {
 
   public static Collector collector;
 
+  public static DriveMotorSystem tmotor;
   public static Pigeon pigeon;
+
 
   public static UI ui;
 
@@ -41,11 +43,12 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     robotContainer = new RobotContainer();
+    tmotor = new DriveMotorSystem();
 
     //These should be at or near the bottom
     oi = new OI();
     ui = new UI();
-    collector = new Collector();
+
   }
 
   /**
