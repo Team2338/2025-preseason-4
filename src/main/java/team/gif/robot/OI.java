@@ -2,9 +2,6 @@ package team.gif.robot;
 
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
-import team.gif.robot.commands.FootballShooter;
-import team.gif.robot.commands.SoccerBallShooter;
-
 public class OI {
     /*
      * Instantiate all joysticks/controllers and their buttons here
@@ -70,6 +67,7 @@ public class OI {
     public final Trigger tDPadDown = test.povDown();
     public final Trigger tDPadLeft = test.povLeft();
 
+
     public OI() {
         /*
          *
@@ -89,8 +87,10 @@ public class OI {
          *   aX.onTrue(new PrintCommand("aX"));
          */
 
-        aA.whileTrue(new FootballShooter());
         aB.whileTrue(new SoccerBallShooter());
+        aA.whileTrue(new FootballShooter());
+        dY.whileTrue(new CollectorTalonBackward());
+        dA.whileTrue(new CollectorTalonForward());
 
 
 

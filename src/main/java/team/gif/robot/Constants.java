@@ -18,5 +18,6 @@ public final class Constants {
         public static final double distanceMiddle = 20;
         public static final double distanceFar = 30;
     }
+    public static final double COLLECTOR_TALON_MOTOR_SPEED =0.2;
 
 }
