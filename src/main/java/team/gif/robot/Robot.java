@@ -56,7 +56,7 @@ public class Robot extends TimedRobot {
     collector = new Collector();
 
 
-    shooterLimelight = new Limelight("Limelight-shooter");
+    shooterLimelight = new Limelight("limelight-shooter");
     shooterLimelight.setDistanceEstimatorParams(90,14.5,15.75, 0);
 
     //These should be at or near the bottom

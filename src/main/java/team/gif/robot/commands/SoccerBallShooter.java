@@ -19,22 +19,19 @@ public class SoccerBallShooter extends Command {
     @Override
     public void execute() {
         // prints and 0,0 are placeholders/test commands
-        double distanceFromTag = Robot.shooterLimelight.getDistance();
+        double distanceFromTag = -Robot.shooterLimelight.getDistance();
+        System.out.println(distanceFromTag);
 
-        if (distanceFromTag < Constants.ShooterLimelight.distanceClose){
+        if (distanceFromTag > Constants.ShooterLimelight.distanceClose){
             System.out.println("Close");
-            Robot.shooter.setSpeed(.1,.1);
+            Robot.shooter.setSpeed(.5,.5);
         }
-        else if (distanceFromTag < Constants.ShooterLimelight.distanceMiddle) {
-            System.out.println("Middle");
-            Robot.shooter.setSpeed(.1,.1);
-        }
-        else if (distanceFromTag < Constants.ShooterLimelight.distanceFar){
+        else if (distanceFromTag > Constants.ShooterLimelight.distanceFar){
             System.out.println("Far");
-            Robot.shooter.setSpeed(0,0);
+            Robot.shooter.setSpeed(.7,.7);
         }else {
-            System.out.println("Super Far");
-            Robot.shooter.setSpeed(0,0);
+            System.out.println("Middle");
+            Robot.shooter.setSpeed(.6,.6);
         }
     }
 
