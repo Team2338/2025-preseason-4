@@ -3,28 +3,21 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package team.gif.robot.subsystems;
-import com.ctre.phoenix.motorcontrol.NeutralMode;
-import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.pathplanner.lib.auto.AutoBuilder;
 import com.pathplanner.lib.config.RobotConfig;
 import com.revrobotics.RelativeEncoder;
 import com.revrobotics.spark.SparkBase;
-import com.revrobotics.spark.SparkClosedLoopController;
 import com.revrobotics.spark.SparkLowLevel;
 import com.revrobotics.spark.SparkMax;
 import com.revrobotics.spark.config.SparkBaseConfig;
 import com.revrobotics.spark.config.SparkMaxConfig;
 import edu.wpi.first.math.estimator.DifferentialDrivePoseEstimator;
-import edu.wpi.first.math.estimator.PoseEstimator;
 import edu.wpi.first.math.geometry.Pose2d;
-import edu.wpi.first.math.kinematics.DifferentialDriveOdometry;
+import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import edu.wpi.first.wpilibj.motorcontrol.MotorController;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import team.gif.robot.Robot;
-import team.gif.robot.RobotMap;
+import edu.wpi.first.math.kinematics.ChassisSpeeds;
 
-import static team.gif.robot.Constants.*;
 import static team.gif.robot.RobotMap.SPARK_MAX_ID;
 
 public class DriveMotorSystem extends SubsystemBase {
@@ -54,24 +47,30 @@ public class DriveMotorSystem extends SubsystemBase {
 
         drive = new DifferentialDrive(sparkleft, sparkright);
 
-        RobotConfig robotConfig;
-        try {
-            robotConfig = RobotConfig.fromGUISettings();
-        } catch (Exception e) {
-            // Handle exception as needed
-            e.printStackTrace();
-        }
-
-        AutoBuilder.configure(
-                this::getPose,
+ //      RobotConfig robotConfig;
+ //       try {
+ //           robotConfig = RobotConfig.fromGUISettings();
+ //       } catch (Exception e) {
+ //           // Handle exception as needed
+ //           e.printStackTrace();
+ //       }
 
 
-        );
+  //      AutoBuilder.configure(
+    //            this::getPose,
+      //          this:: resetPose,
+        //        this:: getRobotRelativeSpeeds,
+         //      (speeds, feedforwards) -> driveRobotRelatiive(speeds),
+
+
+
+        //);
     }
 
-    public Pose2d getPose(){
-        return poseEstimator.getEstimatedPosition();
-    }
+   // public Pose2d getPose(){return poseEstimator.getEstimatedPosition();
+    
+    //public void resetPose(Rotation2d gyroAngle, double leftPositionMeters, double rightPositionMeters, Pose2d poseMeters){poseEstimator.resetPose(Pose2d.kZero);}
+    //public Pose2d getRobotRelativeSpeeds{return poseEstimator.ChassisSpeeds}
 
 //    public double velocityGetleft(){
 //        return  sparkEncoderleft.getVelocity();
