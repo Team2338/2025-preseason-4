@@ -13,6 +13,14 @@ package team.gif.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
+    public static final class ShooterLimelight{
+        public static final double distanceClose = .41;
+        public static final double distanceFar = .395;
+    }
     public static final double COLLECTOR_TALON_MOTOR_SPEED =0.2;
+    public static final double MOTORSPEED = 0.2;
+    public static final double kP = 0.000000006;
+    public static final double kI = 0.000005;
+    public static final double kD = 0;
 
 }

@@ -4,6 +4,8 @@
 
 package team.gif.robot;
 
+import com.pathplanner.lib.commands.PathPlannerAuto;
+import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 
@@ -19,6 +21,10 @@ public class RobotContainer {
     public RobotContainer() {
         // Configure the trigger bindings
         configureBindings();
+    }
+
+    public Command getAutonomousCommand(){
+        return new PathPlannerAuto("Red Auto");
     }
 
     /**
