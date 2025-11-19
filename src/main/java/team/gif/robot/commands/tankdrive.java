@@ -7,7 +7,7 @@ public class tankdrive extends Command {
 
     public tankdrive() {
         super();
-        addRequirements(Robot.tmotor); // uncomment
+        addRequirements(Robot.driveMotorSystem); // uncomment
     }
 
     // Called when the command is initially scheduled.
@@ -19,7 +19,7 @@ public class tankdrive extends Command {
     public void execute() {
         double rightposition = Robot.oi.driver.getRightY();
         double leftposition = Robot.oi.driver.getLeftY();
-        Robot.tmotor.tankdrive(leftposition,rightposition);
+        Robot.driveMotorSystem.tankdrive(leftposition,rightposition);
     }
 
     // Return true when the command should end, false if it should continue. Runs every ~20ms.
@@ -30,7 +30,7 @@ public class tankdrive extends Command {
 
     // Called when the command ends or is interrupted.
     @Override
-    public void end(boolean interrupted) { Robot.tmotor.tankdrive(0,0);
+    public void end(boolean interrupted) { Robot.driveMotorSystem.tankdrive(0,0);
 
     }
 }

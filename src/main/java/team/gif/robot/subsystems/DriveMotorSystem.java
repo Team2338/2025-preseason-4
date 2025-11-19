@@ -85,9 +85,11 @@ public class DriveMotorSystem extends SubsystemBase {
         sparkright.set(Voltage);
         sparkleft.set(Voltage);
     }
+
     public void tankdrive(double leftspeed, double rightspeed){
         drive.tankDrive(leftspeed, rightspeed);
     }
+    public void arcadeDrive(double movespeed, double turnspeed){drive.arcadeDrive(movespeed, turnspeed);}
   /* public void motorvalue(double percentOutputRight, double percentOutputLeft){
         talonleft.set(TalonSRXControlMode.PercentOutput,percentOutputLeft);
         talonright.set(TalonSRXControlMode.PercentOutput, percentOutputRight);

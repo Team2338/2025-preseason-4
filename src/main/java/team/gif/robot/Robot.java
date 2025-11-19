@@ -3,14 +3,13 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package team.gif.robot;
+import team.gif.robot.commands.ArcadeDrive;
 import team.gif.robot.commands.Autos.AutosGroup;
 import team.gif.robot.commands.tankdrive;
 import team.gif.robot.subsystems.DriveMotorSystem;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-import team.gif.lib.logging.EventFileLogger;
-import team.gif.lib.logging.TelemetryFileLogger;
 import team.gif.robot.subsystems.Collector;
 import team.gif.robot.subsystems.drivers.Pigeon;
 
@@ -28,7 +27,7 @@ public class Robot extends TimedRobot {
 
   public static Collector collector;
 
-  public static DriveMotorSystem tmotor;
+  public static DriveMotorSystem driveMotorSystem;
   public static Pigeon pigeon;
 
 
@@ -45,8 +44,9 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     robotContainer = new RobotContainer();
-    tmotor = new DriveMotorSystem();
-    tmotor.setDefaultCommand(new tankdrive());
+    driveMotorSystem = new DriveMotorSystem();
+    driveMotorSystem.setDefaultCommand(new tankdrive());
+    //driveMotorSystem.setDefaultCommand(new ArcadeDrive());
     autonomousCommand = new AutosGroup();
 
 
