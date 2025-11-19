@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.math.kinematics.ChassisSpeeds;
 
-import static team.gif.robot.RobotMap.SPARK_MAX_ID;
+import static team.gif.robot.RobotMap.*;
 
 public class DriveMotorSystem extends SubsystemBase {
     /** Creates a new ExampleSubsystem. */
@@ -35,12 +35,12 @@ public class DriveMotorSystem extends SubsystemBase {
         config.inverted(true);
         config.idleMode(SparkBaseConfig.IdleMode.kBrake);
 
-        sparkleft = new SparkMax(SPARK_MAX_ID, SparkLowLevel.MotorType.kBrushless);
+        sparkleft = new SparkMax(SPARK_MAX_LEFT_ID, SparkLowLevel.MotorType.kBrushless);
         sparkEncoderleft = sparkleft.getEncoder();
         sparkleft.configure(config, SparkBase.ResetMode.kResetSafeParameters, SparkBase.PersistMode.kPersistParameters);
 
 
-        sparkright = new SparkMax(SPARK_MAX_ID, SparkLowLevel.MotorType.kBrushless);
+        sparkright = new SparkMax(SPARK_MAX_RIGHT_ID, SparkLowLevel.MotorType.kBrushless);
         sparkEncoderright = sparkright.getEncoder();
         sparkright.configure(config, SparkBase.ResetMode.kResetSafeParameters, SparkBase.PersistMode.kPersistParameters);
 
