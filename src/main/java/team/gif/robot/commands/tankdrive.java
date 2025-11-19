@@ -17,9 +17,9 @@ public class tankdrive extends Command {
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
     public void execute() {
-        double rightposition = Robot.oi.driver.getRightY();
-        double leftposition = Robot.oi.driver.getLeftY();
-        Robot.driveMotorSystem.tankdrive(leftposition,rightposition);
+        double rightPosition = -Robot.oi.driver.getRightY();
+        double leftPosition = Robot.oi.driver.getLeftY();
+        Robot.driveMotorSystem.tankdrive(leftPosition,rightPosition);
     }
 
     // Return true when the command should end, false if it should continue. Runs every ~20ms.
@@ -32,5 +32,5 @@ public class tankdrive extends Command {
     @Override
     public void end(boolean interrupted) { Robot.driveMotorSystem.tankdrive(0,0);
 
-    }  
+    }
 }

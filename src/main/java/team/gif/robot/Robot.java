@@ -49,9 +49,11 @@ public class Robot extends TimedRobot {
     // autonomous chooser on the dashboard.
     robotContainer = new RobotContainer();
     driveMotorSystem = new DriveMotorSystem();
-    driveMotorSystem.setDefaultCommand(new tankdrive());
-    //driveMotorSystem.setDefaultCommand(new ArcadeDrive());
+    //driveMotorSystem.setDefaultCommand(new tankdrive());
+    driveMotorSystem.setDefaultCommand(new ArcadeDrive());
     autonomousCommand = new AutosGroup();
+    shooter = new Shooter();
+    collector = new Collector();
 
 
     shooterLimelight = new Limelight("Limelight-shooter");

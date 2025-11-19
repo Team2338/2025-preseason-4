@@ -17,8 +17,8 @@ public class ArcadeDrive extends Command {
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
     public void execute() {
-        double moveSpeed = Robot.oi.driver.getLeftY();
-        double turnSpeed = Robot.oi.driver.getRightX();
+        double turnSpeed  = -Robot.oi.driver.getLeftY();
+        double moveSpeed = -Robot.oi.driver.getRightX();
         Robot.driveMotorSystem.arcadeDrive(moveSpeed,turnSpeed);
     }
 

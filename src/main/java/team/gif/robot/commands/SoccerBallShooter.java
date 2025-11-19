@@ -23,11 +23,11 @@ public class SoccerBallShooter extends Command {
 
         if (distanceFromTag < Constants.ShooterLimelight.distanceClose){
             System.out.println("Close");
-            Robot.shooter.setSpeed(0,0);
+            Robot.shooter.setSpeed(.1,.1);
         }
         else if (distanceFromTag < Constants.ShooterLimelight.distanceMiddle) {
             System.out.println("Middle");
-            Robot.shooter.setSpeed(0,0);
+            Robot.shooter.setSpeed(.1,.1);
         }
         else if (distanceFromTag < Constants.ShooterLimelight.distanceFar){
             System.out.println("Far");
@@ -46,5 +46,5 @@ public class SoccerBallShooter extends Command {
 
     // Called when the command ends or is interrupted.
     @Override
-    public void end(boolean interrupted) {}
+    public void end(boolean interrupted) {Robot.shooter.setSpeed(0,0);}
 }
