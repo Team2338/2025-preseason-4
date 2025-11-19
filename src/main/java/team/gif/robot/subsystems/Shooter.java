@@ -11,10 +11,10 @@ public class Shooter extends SubsystemBase {
     private final TalonSRX motorBottom;
 
     public Shooter() {
-        motorTop = new TalonSRX(RobotMap.WINCH_MOTOR_ID);
+        motorTop = new TalonSRX(RobotMap.SHOOTER_TOP_ID);
         motorTop.configFactoryDefault();
         motorTop.setNeutralMode(NeutralMode.Brake);
-        motorBottom = new TalonSRX(RobotMap.WINCH_MOTOR_ID_BOTTOM);
+        motorBottom = new TalonSRX(RobotMap.SHOOTER_BOTTOM_ID);
         motorBottom.configFactoryDefault();
         motorBottom.setNeutralMode(NeutralMode.Brake);
     }
