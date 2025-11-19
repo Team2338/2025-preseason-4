@@ -3,8 +3,6 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package team.gif.robot;
-import team.gif.robot.commands.Autos.AutosGroup;
-import team.gif.robot.commands.tankdrive;
 import team.gif.robot.subsystems.DriveMotorSystem;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -46,9 +44,6 @@ public class Robot extends TimedRobot {
     // autonomous chooser on the dashboard.
     robotContainer = new RobotContainer();
     tmotor = new DriveMotorSystem();
-    tmotor.setDefaultCommand(new tankdrive());
-    autonomousCommand = new AutosGroup();
-
 
     //These should be at or near the bottom
     oi = new OI();
@@ -85,8 +80,7 @@ public class Robot extends TimedRobot {
   /** This autonomous runs the autonomous command selected by your {@link RobotContainer} class. */
   @Override
   public void autonomousInit() {
-    autonomousCommand = robotContainer.getAutonomousCommand();
-    new AutosGroup().schedule();
+    robotContainer.getAutonomousCommand();
   }
 
   /** This function is called periodically during autonomous. */

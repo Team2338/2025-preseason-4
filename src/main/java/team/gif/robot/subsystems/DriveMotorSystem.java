@@ -18,12 +18,7 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.math.kinematics.ChassisSpeeds;
 
-<<<<<<< HEAD
 import static team.gif.robot.RobotMap.SPARK_MAX_ID;
-=======
-import static team.gif.robot.Constants.*;
-
->>>>>>> origin/bd-MoveForwardAuto
 
 public class DriveMotorSystem extends SubsystemBase {
     /** Creates a new ExampleSubsystem. */
@@ -32,7 +27,7 @@ public class DriveMotorSystem extends SubsystemBase {
     public RelativeEncoder sparkEncoderleft;
     public RelativeEncoder sparkEncoderright;
     public DifferentialDrive drive;
-//    public DifferentialDrivePoseEstimator poseEstimator;
+    public DifferentialDrivePoseEstimator poseEstimator;
     
 
     public DriveMotorSystem() {
@@ -40,19 +35,18 @@ public class DriveMotorSystem extends SubsystemBase {
         config.inverted(true);
         config.idleMode(SparkBaseConfig.IdleMode.kBrake);
 
-        sparkleft = new SparkMax(RobotMap.SPARK_MAX_LEFT_ID, SparkLowLevel.MotorType.kBrushless);
+        sparkleft = new SparkMax(SPARK_MAX_ID, SparkLowLevel.MotorType.kBrushless);
         sparkEncoderleft = sparkleft.getEncoder();
         sparkleft.configure(config, SparkBase.ResetMode.kResetSafeParameters, SparkBase.PersistMode.kPersistParameters);
 
 
-        sparkright = new SparkMax(RobotMap.SPARK_MAX_RIGHT_ID, SparkLowLevel.MotorType.kBrushless);
+        sparkright = new SparkMax(SPARK_MAX_ID, SparkLowLevel.MotorType.kBrushless);
         sparkEncoderright = sparkright.getEncoder();
         sparkright.configure(config, SparkBase.ResetMode.kResetSafeParameters, SparkBase.PersistMode.kPersistParameters);
 
 
         drive = new DifferentialDrive(sparkleft, sparkright);
 
-<<<<<<< HEAD
  //      RobotConfig robotConfig;
  //       try {
  //           robotConfig = RobotConfig.fromGUISettings();
@@ -77,26 +71,6 @@ public class DriveMotorSystem extends SubsystemBase {
     
     //public void resetPose(Rotation2d gyroAngle, double leftPositionMeters, double rightPositionMeters, Pose2d poseMeters){poseEstimator.resetPose(Pose2d.kZero);}
     //public Pose2d getRobotRelativeSpeeds{return poseEstimator.ChassisSpeeds}
-=======
-//        RobotConfig robotConfig;
-//        try {
-//            robotConfig = RobotConfig.fromGUISettings();
-//        } catch (Exception e) {
-//            // Handle exception as needed
-//            e.printStackTrace();
-//        }
-//
-//        AutoBuilder.configure(
-//                this::getPose,
-//
-//
-//        );
-    }
-
-//    public Pose2d getPose(){
-//        return poseEstimator.getEstimatedPosition();
-//    }
->>>>>>> origin/bd-MoveForwardAuto
 
 //    public double velocityGetleft(){
 //        return  sparkEncoderleft.getVelocity();
