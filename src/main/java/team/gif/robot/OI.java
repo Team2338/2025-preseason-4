@@ -5,11 +5,6 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 import team.gif.robot.commands.CollectorTalonBackward;
 import team.gif.robot.commands.CollectorTalonForward;
 import team.gif.robot.subsystems.Collector;
-
-public class  OI {
-import team.gif.robot.commands.FootballShooter;
-import team.gif.robot.commands.SoccerBallShooter;
-
 public class OI {
     /*
      * Instantiate all joysticks/controllers and their buttons here
@@ -99,6 +94,9 @@ public class OI {
         dY.whileTrue(new CollectorTalonBackward());
         aA.whileTrue(new FootballShooter());
         aB.whileTrue(new SoccerBallShooter());
+        aA.whileTrue(new FootballShooter());
+        dY.whileTrue(new CollectorTalonBackward());
+        dA.whileTrue(new CollectorTalonForward());
 
 
 
