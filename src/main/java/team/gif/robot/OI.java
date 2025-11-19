@@ -2,6 +2,11 @@ package team.gif.robot;
 
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
+import team.gif.robot.commands.CollectorTalonBackward;
+import team.gif.robot.commands.CollectorTalonForward;
+import team.gif.robot.subsystems.Collector;
+
+public class  OI {
 import team.gif.robot.commands.FootballShooter;
 import team.gif.robot.commands.SoccerBallShooter;
 
@@ -70,6 +75,7 @@ public class OI {
     public final Trigger tDPadDown = test.povDown();
     public final Trigger tDPadLeft = test.povLeft();
 
+
     public OI() {
         /*
          *
@@ -89,6 +95,8 @@ public class OI {
          *   aX.onTrue(new PrintCommand("aX"));
          */
 
+        dA.whileTrue(new CollectorTalonForward());
+        dY.whileTrue(new CollectorTalonBackward());
         aA.whileTrue(new FootballShooter());
         aB.whileTrue(new SoccerBallShooter());
 
