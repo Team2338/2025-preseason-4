@@ -5,7 +5,6 @@
 package team.gif.robot;
 import team.gif.robot.commands.ArcadeDrive;
 import team.gif.robot.commands.Autos.AutosGroup;
-import team.gif.robot.commands.tankdrive;
 import team.gif.robot.subsystems.DriveMotorSystem;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -49,12 +48,11 @@ public class Robot extends TimedRobot {
     // autonomous chooser on the dashboard.
     robotContainer = new RobotContainer();
     driveMotorSystem = new DriveMotorSystem();
-    //driveMotorSystem.setDefaultCommand(new tankdrive());
+    //driveMotorSystem.setDefaultCommand(new tankDrive());
     driveMotorSystem.setDefaultCommand(new ArcadeDrive());
     autonomousCommand = new AutosGroup();
     shooter = new Shooter();
     collector = new Collector();
-
 
     shooterLimelight = new Limelight("limelight-shooter");
     shooterLimelight.setDistanceEstimatorParams(90,14.5,15.75, 0);

@@ -15,7 +15,6 @@ public class AutoDriveForward extends Command {
     @Override
     public void initialize() {
         time = 0;
-
     }
 
     // Called every time the scheduler runs (~20ms) while the command is scheduled
@@ -23,7 +22,7 @@ public class AutoDriveForward extends Command {
     public void execute() {
         if (time <= 50){
             time += 1;
-            Robot.driveMotorSystem.tankdrive(1,1);
+            Robot.driveMotorSystem.tankDrive(.5,.5);
         }
     }
 
@@ -35,5 +34,5 @@ public class AutoDriveForward extends Command {
 
     // Called when the command ends or is interrupted.
     @Override
-    public void end(boolean interrupted) {Robot.driveMotorSystem.tankdrive(0,0);}
+    public void end(boolean interrupted) {Robot.driveMotorSystem.tankDrive(0,0);}
 }

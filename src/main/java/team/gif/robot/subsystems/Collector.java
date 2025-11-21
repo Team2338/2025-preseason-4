@@ -12,9 +12,8 @@ import team.gif.robot.Robot;
 import team.gif.robot.RobotMap;
 
 public class Collector extends SubsystemBase {
-    private TalonSRX collectorMotor;
+    private final TalonSRX collectorMotor;
 
-    /** Creates a new ExampleSubsystem. */
     public Collector() {
         collectorMotor = new TalonSRX(RobotMap.COLLECTOR_TALON_ID);
         collectorMotor.configFactoryDefault();

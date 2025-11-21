@@ -3,9 +3,9 @@ package team.gif.robot.commands;
 import edu.wpi.first.wpilibj2.command.Command;
 import team.gif.robot.Robot;
 
-public class tankdrive extends Command {
+public class tankDrive extends Command {
 
-    public tankdrive() {
+    public tankDrive() {
         super();
         addRequirements(Robot.driveMotorSystem); // uncomment
     }
@@ -19,7 +19,7 @@ public class tankdrive extends Command {
     public void execute() {
         double rightPosition = -Robot.oi.driver.getRightY();
         double leftPosition = Robot.oi.driver.getLeftY();
-        Robot.driveMotorSystem.tankdrive(leftPosition,rightPosition);
+        Robot.driveMotorSystem.tankDrive(leftPosition,rightPosition);
     }
 
     // Return true when the command should end, false if it should continue. Runs every ~20ms.
@@ -30,7 +30,7 @@ public class tankdrive extends Command {
 
     // Called when the command ends or is interrupted.
     @Override
-    public void end(boolean interrupted) { Robot.driveMotorSystem.tankdrive(0,0);
+    public void end(boolean interrupted) { Robot.driveMotorSystem.tankDrive(0,0);
 
     }
 }
