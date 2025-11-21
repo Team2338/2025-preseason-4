@@ -18,7 +18,7 @@ public class CollectorTalonForward extends Command {
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
     public void execute() {
-        Robot.collector.setPercentOutput(Constants.COLLECTOR_TALON_MOTOR_SPEED);
+        Robot.collector.setPercentOutput(Constants.INWARD_COLLECTOR_TALON_MOTOR_SPEED);
     }
 
     // Return true when the command should end, false if it should continue. Runs every ~20ms.

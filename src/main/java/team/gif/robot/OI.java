@@ -92,10 +92,10 @@ public class OI {
          *   aX.onTrue(new PrintCommand("aX"));
          */
 
-        dA.whileTrue(new CollectorTalonForward());
-        dY.whileTrue(new CollectorTalonBackward());
-        aA.whileTrue(new FootballShooter());
-        aB.whileTrue(new SoccerBallShooter());
+        aB.whileTrue(new CollectorTalonForward());
+        aA.whileTrue(new CollectorTalonBackward());
+        aY.whileTrue(new FootballShooter());
+        aX.whileTrue(new SoccerBallShooter());
 
 
 

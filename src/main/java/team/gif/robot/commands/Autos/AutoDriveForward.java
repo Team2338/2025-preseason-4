@@ -22,7 +22,8 @@ public class AutoDriveForward extends Command {
     public void execute() {
         if (time <= 50){
             time += 1;
-            Robot.driveMotorSystem.tankDrive(.5,.5);
+            //Robot.driveMotorSystem.tankDrive(.1,.1);
+            Robot.driveMotorSystem.arcadeDrive(.1,0);
         }
     }
 
@@ -34,5 +35,8 @@ public class AutoDriveForward extends Command {
 
     // Called when the command ends or is interrupted.
     @Override
-    public void end(boolean interrupted) {Robot.driveMotorSystem.tankDrive(0,0);}
+    public void end(boolean interrupted) {
+        //Robot.driveMotorSystem.tankDrive(0,0);
+        Robot.driveMotorSystem.arcadeDrive(0,0);
+        }
 }

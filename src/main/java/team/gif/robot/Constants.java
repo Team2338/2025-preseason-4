@@ -14,13 +14,10 @@ package team.gif.robot;
  */
 public final class Constants {
     public static final class ShooterLimelight{
-        public static final double distanceClose = .41;
-        public static final double distanceFar = .395;
+        public static final double distanceClose = .44;
+        public static final double distanceFar = .41;
     }
-    public static final double COLLECTOR_TALON_MOTOR_SPEED =0.2;
-    public static final double MOTORSPEED = 0.2;
-    public static final double kP = 0.000000006;
-    public static final double kI = 0.000005;
-    public static final double kD = 0;
+    public static final double COLLECTOR_TALON_MOTOR_SPEED = 0.8;
+    public static final double INWARD_COLLECTOR_TALON_MOTOR_SPEED = 0.3;
 
 }

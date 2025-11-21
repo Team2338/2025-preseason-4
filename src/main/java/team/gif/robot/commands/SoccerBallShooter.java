@@ -24,14 +24,17 @@ public class SoccerBallShooter extends Command {
 
         if (distanceFromTag > Constants.ShooterLimelight.distanceClose){
             System.out.println("Close");
-            Robot.shooter.setSpeed(.5,.5);
+            Robot.shooter.setSpeed(.8,.45);
         }
-        else if (distanceFromTag > Constants.ShooterLimelight.distanceFar){
-            System.out.println("Far");
-            Robot.shooter.setSpeed(.7,.7);
-        }else {
+//        else if (distanceFromTag < Constants.ShooterLimelight.distanceFar){
+//            System.out.println("Far");
+//            Robot.shooter.setSpeed(2.5,2.5);
+            //change numbers
+
+            //}
+        else {
             System.out.println("Middle");
-            Robot.shooter.setSpeed(.6,.6);
+            Robot.shooter.setSpeed(.9,.9);
         }
     }
 

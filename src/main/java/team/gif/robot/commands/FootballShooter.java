@@ -19,18 +19,20 @@ public class FootballShooter extends Command {
     @Override
     public void execute() {
         // prints and 0,0 are placeholders/test commands
-        double distanceFromTag = Robot.shooterLimelight.getDistance();
+        double distanceFromTag = -Robot.shooterLimelight.getDistance();
+        System.out.println(distanceFromTag);
 
         if (distanceFromTag > Constants.ShooterLimelight.distanceClose){
             System.out.println("Close");
-            Robot.shooter.setSpeed(.1,.1);
+            Robot.shooter.setSpeed(.8,.4);
         }
-        else if (distanceFromTag > Constants.ShooterLimelight.distanceFar){
-            System.out.println("Far");
-            Robot.shooter.setSpeed(.3,.3);
-        }else {
+//        else if (distanceFromTag < Constants.ShooterLimelight.distanceFar){
+//            System.out.println("Far");
+//            Robot.shooter.setSpeed(.9,.9);
+//          }
+        else {
             System.out.println("Middle");
-            Robot.shooter.setSpeed(.2,.2);
+            Robot.shooter.setSpeed(.8,.8);
         }
     }
 

@@ -4,10 +4,10 @@
 
 package team.gif.robot;
 
-import com.pathplanner.lib.commands.PathPlannerAuto;
-import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
+import team.gif.robot.commands.Autos.AutosGroup;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -23,8 +23,7 @@ public class RobotContainer {
         configureBindings();
     }
 
-    public Command getAutonomousCommand(){
-        return new PathPlannerAuto("Red Auto");
+    public void getAutonomousCommand(){
     }
 
     /**
