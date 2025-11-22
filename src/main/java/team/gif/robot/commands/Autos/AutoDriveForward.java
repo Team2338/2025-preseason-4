@@ -20,15 +20,16 @@ public class AutoDriveForward extends Command {
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
     public void execute() {
-            time += 1;
-            //Robot.driveMotorSystem.tankDrive(.1,.1);
-            Robot.driveMotorSystem.arcadeDrive(.1,0);
+        time += 1;
+        System.out.println(time);
+        //Robot.driveMotorSystem.tankDrive(.1,.1);
+        Robot.driveMotorSystem.arcadeDrive(0,-0.5);
     }
 
     // Return true when the command should end, false if it should continue. Runs every ~20ms.
     @Override
     public boolean isFinished() {
-        return time>50;
+        return time>175;
     }
 
     // Called when the command ends or is interrupted.
