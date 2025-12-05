@@ -39,7 +39,5 @@ public class DriveMotorSystem extends SubsystemBase {
 
         drive = new DifferentialDrive(sparkLeft, sparkRight);
     }
-
-    public void tankDrive(double leftSpeed, double rightSpeed){drive.tankDrive(leftSpeed, rightSpeed);}
     public void arcadeDrive(double moveSpeed, double turnSpeed){drive.arcadeDrive(-moveSpeed*.7,turnSpeed*.7);}
 }

@@ -2,11 +2,7 @@ package team.gif.robot;
 
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
-import team.gif.robot.commands.CollectorTalonBackward;
-import team.gif.robot.commands.CollectorTalonForward;
-import team.gif.robot.commands.FootballShooter;
-import team.gif.robot.commands.SoccerBallShooter;
-import team.gif.robot.subsystems.Collector;
+
 public class OI {
     /*
      * Instantiate all joysticks/controllers and their buttons here
@@ -91,12 +87,6 @@ public class OI {
          * Simple Test:
          *   aX.onTrue(new PrintCommand("aX"));
          */
-
-        aB.whileTrue(new CollectorTalonForward());
-        aA.whileTrue(new CollectorTalonBackward());
-        aY.whileTrue(new FootballShooter());
-        aX.whileTrue(new SoccerBallShooter());
-
 
 
     }

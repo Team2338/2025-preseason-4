@@ -4,13 +4,10 @@
 
 package team.gif.robot;
 import team.gif.robot.commands.ArcadeDrive;
-import team.gif.robot.commands.Autos.AutosGroup;
 import team.gif.robot.subsystems.DriveMotorSystem;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-import team.gif.robot.subsystems.Collector;
-import team.gif.robot.subsystems.Shooter;
 import team.gif.robot.subsystems.drivers.Limelight;
 import team.gif.robot.subsystems.drivers.Pigeon;
 
@@ -25,13 +22,9 @@ public class Robot extends TimedRobot {
   private RobotContainer robotContainer;
   public static OI oi;
   private Command getAutonomousCommand;
-
-  public static Collector collector;
-
   public static DriveMotorSystem driveMotorSystem;
   public static Pigeon pigeon;
   public static Limelight shooterLimelight;
-  public static Shooter shooter;
 
 
   public static UI ui;
@@ -48,12 +41,7 @@ public class Robot extends TimedRobot {
     // autonomous chooser on the dashboard.
     robotContainer = new RobotContainer();
     driveMotorSystem = new DriveMotorSystem();
-    //driveMotorSystem.setDefaultCommand(new tankDrive());
     driveMotorSystem.setDefaultCommand(new ArcadeDrive());
-    autonomousCommand = new AutosGroup();
-    shooter = new Shooter();
-    collector = new Collector();
-
     shooterLimelight = new Limelight("limelight-shooter");
     shooterLimelight.setDistanceEstimatorParams(90,14.5,15.75, 0);
 

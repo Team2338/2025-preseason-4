@@ -12,12 +12,4 @@ package team.gif.robot;
  * <p>It is advised to statically import this class (or one of its inner classes) wherever the
  * constants are needed, to reduce verbosity.
  */
-public final class Constants {
-    public static final class ShooterLimelight{
-        public static final double distanceClose = .44;
-        public static final double distanceFar = .41;
-    }
-    public static final double COLLECTOR_TALON_MOTOR_SPEED = 0.8;
-    public static final double INWARD_COLLECTOR_TALON_MOTOR_SPEED = 0.3;
-
-}
+public final class Constants {}
