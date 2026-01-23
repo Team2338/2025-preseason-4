@@ -3,41 +3,21 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package team.gif.robot.subsystems;
-import com.revrobotics.RelativeEncoder;
-import com.revrobotics.spark.SparkBase;
-import com.revrobotics.spark.SparkLowLevel;
-import com.revrobotics.spark.SparkMax;
-import com.revrobotics.spark.config.SparkBaseConfig;
-import com.revrobotics.spark.config.SparkMaxConfig;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import static team.gif.robot.RobotMap.*;
+
 
 public class DriveMotorSystem extends SubsystemBase {
 
-    public SparkMax sparkLeft;
-    public SparkMax sparkRight;
-    public RelativeEncoder sparkEncoderLeft;
-    public RelativeEncoder sparkEncoderRight;
+    public WPI_TalonSRX TalonRight;
+    public WPI_TalonSRX TalonLeft;
     public DifferentialDrive drive;
-    
 
     public DriveMotorSystem() {
-        SparkMaxConfig config = new SparkMaxConfig();
-        config.inverted(true);
-        config.idleMode(SparkBaseConfig.IdleMode.kBrake);
-
-        sparkLeft = new SparkMax(SPARK_MAX_LEFT_ID, SparkLowLevel.MotorType.kBrushless);
-        sparkEncoderLeft = sparkLeft.getEncoder();
-        sparkLeft.configure(config, SparkBase.ResetMode.kResetSafeParameters, SparkBase.PersistMode.kPersistParameters);
-
-
-        sparkRight = new SparkMax(SPARK_MAX_RIGHT_ID, SparkLowLevel.MotorType.kBrushless);
-        sparkEncoderRight = sparkRight.getEncoder();
-        sparkRight.configure(config, SparkBase.ResetMode.kResetSafeParameters, SparkBase.PersistMode.kPersistParameters);
-
-
-        drive = new DifferentialDrive(sparkLeft, sparkRight);
+        TalonLeft = new WPI_TalonSRX(1);
+        TalonRight = new WPI_TalonSRX(2);
+        drive = new DifferentialDrive(TalonLeft, TalonRight);
     }
     public void arcadeDrive(double moveSpeed, double turnSpeed){drive.arcadeDrive(-moveSpeed*.5,-turnSpeed*.5);}
 }

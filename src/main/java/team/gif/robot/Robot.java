@@ -4,6 +4,7 @@
 
 package team.gif.robot;
 import team.gif.robot.commands.ArcadeDrive;
+import team.gif.robot.subsystems.Collector;
 import team.gif.robot.subsystems.DriveMotorSystem;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -24,7 +25,7 @@ public class Robot extends TimedRobot {
   private Command getAutonomousCommand;
   public static DriveMotorSystem driveMotorSystem;
   public static Pigeon pigeon;
-  public static Limelight shooterLimelight;
+  public static Collector collector;
 
 
   public static UI ui;
@@ -42,8 +43,7 @@ public class Robot extends TimedRobot {
     robotContainer = new RobotContainer();
     driveMotorSystem = new DriveMotorSystem();
     driveMotorSystem.setDefaultCommand(new ArcadeDrive());
-    shooterLimelight = new Limelight("limelight-shooter");
-    shooterLimelight.setDistanceEstimatorParams(90,14.5,15.75, 0);
+    collector = new Collector();
 
     //These should be at or near the bottom
     oi = new OI();
