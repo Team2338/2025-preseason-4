@@ -32,5 +32,6 @@ public class Collect extends Command {
     @Override
     public void end(boolean interrupted) {
         Robot.collector.setRPM(0);
+        Robot.collector.setVoltage(0);
     }
 }

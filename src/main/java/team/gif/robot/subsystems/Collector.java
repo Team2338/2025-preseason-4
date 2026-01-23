@@ -21,7 +21,7 @@ public class Collector extends SubsystemBase {
     private final RelativeEncoder relativeEncoder;
 
     public Collector() {
-        sparkMax = new SparkMax(3, SparkLowLevel.MotorType.kBrushless);
+        sparkMax = new SparkMax(45, SparkLowLevel.MotorType.kBrushless);
         sparkClosedLoopController = sparkMax.getClosedLoopController();
         relativeEncoder = sparkMax.getEncoder();
 
@@ -36,6 +36,8 @@ public class Collector extends SubsystemBase {
     public void setRPM(double setpoint){
         sparkClosedLoopController.setReference(setpoint, SparkBase.ControlType.kVelocity);
     }
+
+    public void setVoltage(double voltage){sparkMax.setVoltage(voltage);}
 
     public double encoderVelocity(){return relativeEncoder.getVelocity();}
 }

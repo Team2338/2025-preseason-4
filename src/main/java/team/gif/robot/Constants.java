@@ -15,5 +15,5 @@ import team.gif.robot.subsystems.Collector;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-    public static final double CollectorRPM = 10;
+    public static final double CollectorRPM = -10000;
 }

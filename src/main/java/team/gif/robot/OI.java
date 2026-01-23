@@ -1,7 +1,9 @@
 package team.gif.robot;
 
+import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
+import team.gif.robot.commands.Collect;
 
 public class OI {
     /*
@@ -70,6 +72,8 @@ public class OI {
 
 
     public OI() {
+
+        aB.whileTrue(new Collect());
         /*
          *
          * Create controller actions here
