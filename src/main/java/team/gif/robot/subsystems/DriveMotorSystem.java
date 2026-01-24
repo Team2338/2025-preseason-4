@@ -19,5 +19,5 @@ public class DriveMotorSystem extends SubsystemBase {
         TalonRight = new WPI_TalonSRX(28);
         drive = new DifferentialDrive(TalonLeft, TalonRight);
     }
-    public void arcadeDrive(double moveSpeed, double turnSpeed){drive.arcadeDrive(moveSpeed,-turnSpeed*.5);}
+    public void arcadeDrive(double moveSpeed, double turnSpeed){drive.arcadeDrive(moveSpeed,turnSpeed);}
 }
