@@ -1,6 +1,7 @@
 package team.gif.robot;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import team.gif.robot.subsystems.Collector;
 
 public class UI {
     /**
@@ -25,5 +26,6 @@ public class UI {
     public void update() {
         //Example
         //SmartDashboard.putNumber("Climber Position", Robot.elevator.getPosition())
+        SmartDashboard.putNumber("RPM", Robot.collector.encoderVelocity()*-1);
     }
 }

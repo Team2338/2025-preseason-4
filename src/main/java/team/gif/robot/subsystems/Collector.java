@@ -29,7 +29,7 @@ public class Collector extends SubsystemBase {
         config.idleMode(SparkBaseConfig.IdleMode.kBrake);
         config.inverted(true);
 
-        config.closedLoop.pid(0.0017,0,0);
+        config.closedLoop.pid(0.001,0.0000004,0.004);
         sparkMax.configure(config, SparkBase.ResetMode.kResetSafeParameters, SparkBase.PersistMode.kPersistParameters);
     }
 
